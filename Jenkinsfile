@@ -12,7 +12,7 @@ pipeline {
         
         stage('Jar Build') {
             steps {
-                dir('./jenkins-cicd-poc') {
+                dir('./cicd-spring') {
                     sh './gradlew clean build'
                 }
             }
