@@ -6,13 +6,15 @@ pipeline {
             steps {
                  echo 'Git clone'
                  echo 'Pulling...' + env.BRANCH_NAME
+                 git branch: env.BRANCH_NAME, credentialsId: 'github-jenkins', url: 'https://github.com/sosohan-study/jenkins-cicd-poc.git'
             }
         }
         
         stage('Jar Build') {
             steps {
-                 echo 'Jar Build'
-                 echo 'Pulling...' + env.BRANCH_NAME
+                dir('./jenkins-cicd-poc') {
+                    ./gradlew clean build 
+                }
             }
         }
         
