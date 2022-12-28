@@ -1,5 +1,5 @@
 # JDK11 이미지 사용
-FROM openjdk:17-jdk
+FROM openjdk:17.0.2-jdk
 
 VOLUME /tmp
 
